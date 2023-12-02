@@ -3,5 +3,6 @@
 ## How to run
 ```bash
 $ nix-shell
-$ rake dayn
+# number in 1..25
+$ rake daynumber
 ```
