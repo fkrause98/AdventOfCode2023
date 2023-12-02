@@ -1,0 +1,3 @@
+task :day1 do
+  ruby './lib/day1/day1.rb'
+end

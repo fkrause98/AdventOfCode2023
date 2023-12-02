@@ -75,7 +75,7 @@ class TestAOCDay1Part1 < Test::Unit::TestCase
   end
 
   def test04_actual_input
-    input = File.foreach('input.txt')
+    input = File.foreach('./lib/day1/input.txt')
     solver = AOCSolverDay1.new input
     assert_equal(solver.part1, 53_974)
   end
@@ -111,7 +111,7 @@ class TestAOCDay1Part1 < Test::Unit::TestCase
   end
 
   def test_part_2_actual_input
-    input = File.foreach('input.txt')
+    input = File.foreach('./lib/day1/input.txt')
     solver = AOCSolverDay1.new input
     assert_equal(solver.part2, 52_840)
   end
