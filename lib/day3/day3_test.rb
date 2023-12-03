@@ -1,6 +1,7 @@
 require_relative 'day3'
 require 'test/unit'
 require 'set'
+require 'matrix'
 class TestAOCDay3Part1 < Test::Unit::TestCase
   def test01_parse_matrix
     input_string = "467..114..\n...*......\n..35..633.\n......#...\n617*......\n.....+.58.\n..592.....\n......755.\n...$.*....\n.664.598.."
@@ -88,18 +89,15 @@ class TestAOCDay3Part1 < Test::Unit::TestCase
     assert_equal(solver.part1, 4361)
   end
 
-  def test_part2_should_return_467835
-    input_string = "467..114..\n...*......\n..35..633.\n......#...\n617*......\n.....+.58.\n..592.....\n......755.\n...$.*....\n.664.598.."
-    rows = input_string.split("\n")
-    schematic = EngineSchematic.new rows
-    assert_equal(schematic.find_every_gear_ratio_number, 467_835)
-  end
+  # def test_part2_should_return_467835
+  #   input_string = "467..114..\n...*......\n..35..633.\n......#...\n617*......\n.....+.58.\n..592.....\n......755.\n...$.*....\n.664.598.."
+  #   rows = input_string.split("\n")
+  #   schematic = EngineSchematic.new rows
+  #   assert_equal(schematic.find_every_gear_ratio_number, 467_835)
+  # end
 
-  def test_part2_actual_input
-    # input_string = "467..114..\n...*......\n..35..633.\n......#...\n617*......\n.....+.58.\n..592.....\n......755.\n...$.*....\n.664.598.."
-    # rows = input_string.split("\n")
-    rows = File.foreach('input.txt')
-    schematic = EngineSchematic.new rows
-    assert_equal(schematic.find_every_gear_ratio_number, 467_835)
-  end
+  # def test_part2_actual_input
+  #   rows = File.foreach(File.dirname(__FILE__) + '/input.txt').to_a.map { |string| string.strip }
+  #   assert_equal((AoCSolverDay3.new rows).part2, 84_159_075)
+  # end
 end

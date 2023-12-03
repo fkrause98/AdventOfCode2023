@@ -9,6 +9,7 @@ pkgs.mkShell {
     solargraph
     rufo
     bundler
+    bundix
     # Add any other Ruby dependencies you need here
   ];
 

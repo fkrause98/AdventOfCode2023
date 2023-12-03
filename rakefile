@@ -1,4 +1,4 @@
-task :day1 do 
+task :day1 do
   ruby './lib/day1/day1.rb'
 end
 
@@ -10,7 +10,10 @@ task :day2 do
   ruby './lib/day2/day2.rb'
 end
 
+task :day3 do
+  ruby './lib/day3/day3.rb'
+end
 
-task :day2_test do
-  ruby './lib/day2/day2_test.rb'
+task :day3_test do
+  ruby './lib/day3/day3_test.rb'
 end

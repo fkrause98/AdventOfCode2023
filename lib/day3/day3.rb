@@ -1,4 +1,5 @@
 require 'set'
+require 'matrix'
 class EngineSchematic
   attr_reader :input_matrix, :symbols_positions, :adjacent_numbers_positions
 
@@ -193,6 +194,12 @@ class AoCSolverDay3
       .map { |position| @engine_schematic.get_number_at position }
       .sum
   end
+
+  def part2
+    @engine_schematic
+      .find_every_gear_ratio_number
+  end
 end
-input = File.foreach('input.txt').to_a.map { |string| string.strip }
+input = File.foreach(File.dirname(__FILE__) + '/input.txt').to_a.map { |string| string.strip }
 puts "Part 1 answer: #{(AoCSolverDay3.new input).part1}"
+puts "Part 2 answer: #{(AoCSolverDay3.new input).part2}"
