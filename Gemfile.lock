@@ -4,6 +4,7 @@ GEM
     ast (2.4.2)
     json (2.7.0)
     language_server-protocol (3.17.0.3)
+    matrix (0.4.2)
     parallel (1.23.0)
     parser (3.2.2.4)
       ast (~> 2.4.1)
@@ -28,15 +29,18 @@ GEM
       parser (>= 3.2.1.0)
     ruby-progressbar (1.13.0)
     rufo (0.16.3)
+    seeing_is_believing (0.0.23)
     unicode-display_width (2.5.0)
 
 PLATFORMS
   arm64-darwin-22
 
 DEPENDENCIES
+  matrix
   rake
   rubocop
   rufo
+  seeing_is_believing
 
 BUNDLED WITH
    2.4.20
