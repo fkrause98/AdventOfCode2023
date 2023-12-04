@@ -17,3 +17,11 @@ end
 task :day3_test do
   ruby './lib/day3/day3_test.rb'
 end
+
+task :day4 do
+  ruby './lib/day4/day4.rb'
+end
+
+task :day4_test do
+  ruby './lib/day4/day4_test.rb'
+end
