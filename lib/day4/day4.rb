@@ -11,7 +11,7 @@ class AoCSolverDay4
 
   def part2
     total = Hash[(@cards.map { |card| [card.id, 1] })]
-    @cards.each do |card|
+    @cards.each_with_object(total) do |card, total|
       matches = card.amount_of_winning_cards
       (card.id + 1..(card.id + matches)).each do |index|
         total[index] += total[card.id]
