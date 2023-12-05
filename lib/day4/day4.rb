@@ -10,9 +10,14 @@ class AoCSolverDay4
   end
 
   def part2
-    @cards
-      .map { |card| [card.id, card] }
-      .to_h
+    total = Hash[(@cards.map { |card| [card.id, 1] })]
+    @cards.each do |card|
+      matches = card.amount_of_winning_cards
+      (card.id + 1..(card.id + matches)).each do |index|
+        total[index] += total[card.id]
+      end
+    end
+    total.sum { |card_id, copies| copies }
   end
 end
 
@@ -32,13 +37,13 @@ class Card
   end
 
   def score
-    amount_of_winning_cards = @actual_values.count { |card_value| @winning_values.include? card_value }
-    return amount_of_winning_cards if amount_of_winning_cards <= 1
+    base_score = amount_of_winning_cards
+    return base_score if base_score <= 1
 
-    2**(amount_of_winning_cards - 1)
+    2**(base_score - 1)
   end
 
-  def matching_cards
+  def amount_of_winning_cards
     @actual_values.count { |card_value| @winning_values.include? card_value }
   end
 end
